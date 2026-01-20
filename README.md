@@ -1,4 +1,6 @@
 # legendary-telegram
+- application pour preparer un voyage
+- il faut envoyer un message, se conndcter avec de fausses info, prendre des risques 
 future app , send a telegram in the application, a legndary  teelgram
 - appliction
 partner up, 
