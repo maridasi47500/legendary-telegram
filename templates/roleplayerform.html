@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block content %}<form  enctype="multipart/form-data" method="POST">
+<div class="field"><label for="somefieldroleplayername">name</label><input type="text" id="somefieldroleplayername" name="name"/></div>
+<div class="field"><label for="somefieldroleplayerpic">pic</label><input type="file" id="somefieldroleplayerpic" name="pic"/></div>
+<div class="field"><label for="somefieldroleplayerdescription">description</label><input type="text" id="somefieldroleplayerdescription" name="description"/></div><div class="actions"><input type="submit"/></div></form>{% for x in roleplayers %}{{x["name"] }}{% endfor %}{% endblock %}{% block liens %}<a href="/">bienvenue</a><a href="/add_one_roleplayer"> add one roleplayer</a>{% endblock %}

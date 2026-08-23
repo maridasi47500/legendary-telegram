@@ -1,0 +1,43 @@
+{% extends 'base.html' %}{% block content %}<form  enctype="multipart/form-data" method="POST">
+<div class="field"><label for="somefieldphonecalluser_id">user_id</label><input type="text" id="somefieldphonecalluser_id" name="user_id"/></div>
+<div class="field"><label for="somefieldphonecallgrievous_situation_degree">grievous_situation_degree</label><input type="text" id="somefieldphonecallgrievous_situation_degree" name="grievous_situation_degree"/></div>
+<div class="field"><label for="somefieldphonecalldescription">description</label><input type="text" id="somefieldphonecalldescription" name="description"/></div>
+<div class="field"><label for="somefieldphonecallplace">place</label><input type="text" id="somefieldphonecallplace" name="place"/></div>
+<div class="field"><label for="somefieldphonecalllat">lat</label><input type="text" id="somefieldphonecalllat" name="lat"/></div>
+<div class="field"><label for="somefieldphonecalllon">lon</label><input type="text" id="somefieldphonecalllon" name="lon"/></div><div class="actions"><input type="submit"/></div></form>{% for x in phonecalls %}{{x["user_id"] }}{% endfor %}
+<div id="monadresse">
+</div>
+<div id="autresoffres">
+</div>
+
+     <div class="field">
+
+                                         <label for="monlieu1">lieu</label>
+
+
+         <input type="text" name="lieu" id="monlieu1" placeholder="nom du lieu"/>
+
+
+                 </div>
+
+                <button id="loadmycity" type="button">chercher l'adresse</button>
+
+<div id="chercherunjob" style="display:none;">
+la carte est bien là ou est l'offre d'emploi?
+</div>
+
+                                                        <input type="hidden" value="" id="maregion1" name="region" />
+                                                        <input type="hidden" value="" id="monpays1" name="pays" />
+
+
+        <input type="hidden" value="" id="moncode1" name="code" />
+
+
+        <input type="hidden" value="" id="maville1" name="ville" />
+
+
+        <input type="hidden" value="" id="monrayon1" name="rayon" />
+
+                                                         <input type="hidden" onchange="" name="job" value="informatique" id="monjob1" placeholder="nom du job"/>
+
+<div id="imap"><div id="map" style="height:200px;width:100%;" onclick="onMapClick(event);"><!-- Ici s'affichera la carte --></div>{% endblock %}{% block liens %}<a href="/">bienvenue</a><a href="/add_one_phonecall"> add one phonecall</a>{% endblock %}{% block jsmap %}<script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script><script src="/static/js/phonecallmymap.js" type="text/javascript"></script>{% endblock %}

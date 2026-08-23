@@ -1,0 +1,50 @@
+{% extends 'base.html' %}{% block content %}<form  enctype="multipart/form-data" method="POST">
+<div class="field"><label for="somefieldreal_time_postinguser_id">user_id</label><input type="text" id="somefieldreal_time_postinguser_id" name="user_id"/></div>
+<div class="field"><label for="somefieldreal_time_postingtitle">title</label><input type="text" id="somefieldreal_time_postingtitle" name="title"/></div>
+<div class="field"><label for="somefieldreal_time_postingcontent">content</label><input type="text" id="somefieldreal_time_postingcontent" name="content"/></div>
+<div class="field"><label for="somefieldsocial_media_reputation_risk">social_media_reputation_risk</label><label for="somefieldsocial_media_reputation_risk1"><input type="radio" id="somefieldsocial_media_reputation_risk1" name="social_media_reputation_risk" value="1"/>yes</label>
+<label for="somefieldsocial_media_reputation_risk2"><input type="radio" id="somefieldsocial_media_reputation_risk2" name="social_media_reputation_risk" value="0"/>no</label></div>
+<div class="field"><label for="somefieldpersonal_relation_risk">personal_relation_risk</label><label for="somefieldpersonal_relation_risk1"><input type="radio" id="somefieldpersonal_relation_risk1" name="personal_relation_risk" value="1"/>yes</label>
+<label for="somefieldpersonal_relation_risk2"><input type="radio" id="somefieldpersonal_relation_risk2" name="personal_relation_risk" value="0"/>no</label></div>
+<div class="field"><label for="somefieldreal_time_postinglat">lat</label><input type="text" id="somefieldreal_time_postinglat" name="lat"/></div>
+<div class="field"><label for="somefieldreal_time_postinglon">lon</label><input type="text" id="somefieldreal_time_postinglon" name="lon"/></div>
+<div class="field"><label for="somefieldroleplayer_id">roleplayer_id</label><select id="somefieldroleplayer_id" name="roleplayer_id"><option value="novalue">no value</option>
+{% for someroleplayer in touslesroleplayer %}
+<option value="{{ someroleplayer['id'] }}">{{ someroleplayer['name'] }}</option>{% endfor %}
+</select></div><div class="actions"><input type="submit"/></div></form>{% for x in real_time_postings %}{{x["user_id"] }}{% endfor %}
+<div id="monadresse">
+</div>
+<div id="autresoffres">
+</div>
+
+     <div class="field">
+
+                                         <label for="monlieu1">lieu</label>
+
+
+         <input type="text" name="lieu" id="monlieu1" placeholder="nom du lieu"/>
+
+
+                 </div>
+
+                <button id="loadmycity" type="button">chercher l'adresse</button>
+
+<div id="chercherunjob" style="display:none;">
+la carte est bien là ou est l'offre d'emploi?
+</div>
+
+                                                        <input type="hidden" value="" id="maregion1" name="region" />
+                                                        <input type="hidden" value="" id="monpays1" name="pays" />
+
+
+        <input type="hidden" value="" id="moncode1" name="code" />
+
+
+        <input type="hidden" value="" id="maville1" name="ville" />
+
+
+        <input type="hidden" value="" id="monrayon1" name="rayon" />
+
+                                                         <input type="hidden" onchange="" name="job" value="informatique" id="monjob1" placeholder="nom du job"/>
+
+<div id="imap"><div id="map" style="height:200px;width:100%;" onclick="onMapClick(event);"><!-- Ici s'affichera la carte --></div>{% endblock %}{% block liens %}<a href="/">bienvenue</a><a href="/add_one_real_time_posting"> add one real_time_posting</a>{% endblock %}{% block jsmap %}<script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script><script src="/static/js/real_time_postingmymap.js" type="text/javascript"></script>{% endblock %}
